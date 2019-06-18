@@ -1,0 +1,440 @@
+@import "./_default";
+@import "./_minix";
+@import "./_public";
+.c2c-wrap {
+    position: relative;
+    width: 1200px;
+    margin: 50px auto;
+    .c2c-banner {
+        position: relative;
+        text-align: center;
+        margin: 50px 0;
+        .c2c-banner-wrap {
+            position: relative;
+            display: inline-block;
+            .c2c-img {
+                width: auto;
+            }
+            .otb-banner-text {
+                @include position(absolute, 0, 0, 0, 0);
+                @include display(flex, center, column, center);
+                @include font(20px, $white, $lineH: 30px);
+                padding: 30px\0\9;
+                .c2c-banner-btn {
+                    padding: 3px 40px;
+                    background: #BFBFBF;
+                    border-radius: 20px;
+                    margin-top: 10px;
+                    @include font(16px, $white);
+                }
+                .c2c-banner-success-btn {
+                    padding: 3px 40px;
+                    background: $color_type8;
+                    border-radius: 20px;
+                    margin-top: 10px;
+                    @include font(16px, $white);
+                }
+            }
+        }
+    }
+    .tab-list {
+        justify-content: center;
+        text-align: center;
+    }
+    .c2c-search-wrap {
+        margin: 15px 0; // height: 40px;
+    }
+    .c2c-coin {
+        // height: 40px;
+        line-height: 40px;
+        @include display(flex);
+        flex-wrap: wrap;
+        font-size: 14px;
+        display: inline-block\0\9;
+        &-item {
+            padding: 0 20px;
+            margin-right: 5px;
+            display: inline-block\0\9;
+            margin-bottom: 10px;
+            &.active {
+                background: $defaultColor;
+                color: $white;
+                font-size: 14px;
+                border-radius: 2px;
+            }
+            &:hover {
+                @extend .active;
+            }
+        }
+    }
+    .c2c-search-mutity {
+        width: 300px;
+    }
+    .c2c-search {
+        float: right \0\9;
+        position: relative;
+        .c2c-search-cont {
+            min-height: 100px;
+            @include position(absolute, 50px, 0, $l: 0);
+            background: $white;
+            z-index: 9;
+            box-shadow: 0 0 10px #ccc;
+            border-radius: 4px;
+            padding: 10px;
+        }
+    }
+    .user-verif {
+        position: relative;
+        .icon {
+            @include size(30px, 30px);
+            border-radius: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url('~@/assets/img/c2c-verif-icon.png') no-repeat center center;
+            background-size: 100% 100%;
+            position: relative;
+            &::after {
+                content: '';
+                @include position(absolute,
+                $r: 0, $b:0);
+                @include size(8px,
+                8px);
+                border-radius: 100%;
+            }
+            &.success {
+                border: 1px solid $color_type4;
+                &::after {
+                    background: $color_type4;
+                }
+            }
+            &.info {
+                border: 1px solid #D2D2D2;
+                &::after {
+                    background: #D2D2D2;
+                }
+            }
+        }
+    }
+    .pay-type {
+        .icon {
+            @include size(30px,
+            30px);
+            display: inline-block; // &.bank {
+            //     background: url('~@/assets/img/bank-icon.png') no-repeat center center;
+            // }
+            // &.alipay {
+            //     background: url('~@/assets/img/alipay-icon.png') no-repeat center center;
+            // }
+            // &.wechat {
+            //     background: url('~@/assets/img/wechat-icon.png') no-repeat center center;
+            // }
+            &.UNIONPAY {
+                background: url('~@/assets/img/bank-icon.png') no-repeat center center;
+            }
+            &.ALIPAY {
+                background: url('~@/assets/img/alipay-icon.png') no-repeat center center;
+            }
+            &.WECHAT {
+                background: url('~@/assets/img/wechat-icon.png') no-repeat center center;
+            }
+        }
+    }
+    .c2c-btn-text {
+        color: $defaultColor;
+    }
+    .c2c-btn {
+        height: 40px;
+        line-height: 40px;
+        padding: 8px 25px;
+        border: 1px solid $defaultColor;
+        color: $defaultColor;
+        border-radius: 4px;
+        &:hover {
+            background: $defaultColor;
+            color: $white;
+        }
+    }
+}
+
+.user-form-title {
+    text-align: center;
+    font-size: 22px;
+    margin: 20px auto;
+}
+
+.zx-form-label {
+    position: relative;
+    .zx-form-title {
+        @include display(flex);
+        @include font(16px,
+        #001A41,
+        $lineH: 35px);
+        .title {
+            @include font(16px,
+            #001A41,
+            $lineH: 35px);
+        }
+        .desc {
+            @include font(14px,
+            #999,
+            $lineH: 35px);
+        }
+    }
+}
+
+.slide-input-wrap {
+    width: 130px;
+    position: relative;
+    height: 40px;
+    font-size: 16px;
+    .slider-input {
+        height: 100%;
+        width: 100%;
+        border: 1px solid #E7E8EA;
+        border-radius: 4px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+    .slider-text {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+        line-height: 40px;
+        color: $defaultColor;
+    }
+}
+
+.primary-form {
+    .slider-input,
+    .slider-text {
+        color: $defaultColor;
+    }
+}
+
+.success-form {
+    .slider-input,
+    .slider-text {
+        color: $c-success;
+    }
+    .el-input-group__append {
+        color: $c-success;
+    }
+}
+
+// sale.vue
+.sale-template {
+    position: relative;
+    width: 1200px;
+    margin: 50px auto 100px;
+    .sale-verif-cont {
+        align-items: center;
+        @include font(14px,
+        #002059,
+        $lineH: 25px);
+    }
+    .sale-verif {
+        border-radius: 100%;
+        border: 1px solid $color_type4;
+        background: url('~@/assets/img/c2c-verif-icon.png') no-repeat center center;
+        background-size: 100% 100%;
+        margin-right: 10px;
+        position: relative;
+        @include size(52px,
+        52px);
+        &::after {
+            content: "";
+            background: $color_type4;
+            border-radius: 100%;
+            @include size(10px,
+            10px);
+            @include position(absolute,
+            $r: 0, $b:4px);
+        }
+    }
+    .sale-list {
+        position: relative;
+        @include display(flex,
+        space-between);
+        flex-wrap: wrap;
+        .sale-item {
+            margin-top: 15px;
+            box-shadow: 0 2px 15px rgba(40, 43, 49, 0.06);
+            @include size(100px,
+            32%,
+            $maxH: 100px);
+            text-align: center;
+            padding: 20px 0\0\9;
+            @include display(flex,
+            center,
+            column,
+            center);
+            display: inline-block\0\9;
+            vertical-align: middle;
+            h3 {
+                @include font(16px,
+                #040D2C,
+                $lineH: 35px);
+            }
+            &-desc {
+                @include font(14px,
+                #040D2C);
+                span {
+                    color: $defaultColor;
+                }
+                .icon {
+                    height: 30px;
+                    width: 30px;
+                    display: inline-block;
+                    &.UNIONPAY {
+                        background: url('~@/assets/img/bank-icon.png') no-repeat center center; // background-size: 100%;
+                    }
+                    &.ALIPAY {
+                        background: url('~@/assets/img/alipay-icon.png') no-repeat center center; // background-size: 100%;
+                    }
+                    &.WECHAT {
+                        background: url('~@/assets/img/wechat-icon.png') no-repeat center center; // background-size: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .textarea-wrap {
+        height: 100%;
+        @include display(flex,
+        $direction: column);
+        h3 {
+            font-size: 16px;
+            color: #040D2C;
+        }
+        .textareaValue {
+            margin-top: 10px;
+            background: #F6F7FC;
+            width: 100%;
+            padding: 10px;
+            flex: 1;
+            border: 1px dashed #019DFA;
+            resize: none;
+            border-radius: 3px;
+            line-height: 25px;
+            min-height: 300px\0\9;
+            p {
+                padding: 3px;
+                font-size: 14px;
+            }
+        }
+    }
+    .border {
+        margin: 50px 0;
+        height: 1px;
+        width: 1200px;
+        background: #EEEEEE;
+    }
+    .grid-content {
+        height: 100%;
+        .form-wrap {
+            height: 100%;
+            .demo-ruleForm {
+                height: 100%;
+                @include display(flex,
+                space-between,
+                column);
+            }
+            .sale-btn {
+                border: 1px solid $defaultColor;
+                color: $defaultColor;
+                transition: all ease 0.5s;
+                &:hover {
+                    background: $defaultColor;
+                    color: $white;
+                }
+            }
+            .sale-btns {
+                border: 1px solid $c-success;
+                color: $c-success;
+                transition: all ease 0.5s;
+                &:hover {
+                    background: $c-success;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.sale-pay-cont {
+    position: relative;
+    text-align: center;
+    .pay-type-tab {
+        text-align: center;
+        @include display(flex,
+        center,
+        $align: center);
+        .type-tab-item {
+            display: inline-block;
+            background: #F7F7F7;
+            color: #333333;
+            padding: 10px 40px;
+            font-size: 14px;
+            vertical-align: middle;
+            &:first-of-type {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+            &:last-of-type {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+            &.active {
+                background: $color_type4;
+                color: white;
+            }
+        }
+    }
+    .pay-type-code {
+        // @include size(280px,346px);
+        text-align: center;
+        margin: 10px auto;
+        padding: 20px 40px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        img {
+            @include size(150px,
+            150px)
+        }
+        p {
+            @include font(14px,
+            #333333,
+            center,
+            $lineH: 30px);
+        }
+    }
+    .pay-type-account {
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        margin: 10px auto;
+        .bank-title {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            @include font(14px,
+            #001A41);
+        }
+        .bank-info {
+            padding: 25px 0;
+            p {
+                @include font(24px,
+                #001A41,
+                $lineH: 30px);
+            }
+            span {
+                @include font(12px,
+                #001A41,
+                $lineH: 20px);
+            }
+        }
+    }
+}

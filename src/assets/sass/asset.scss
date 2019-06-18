@@ -1,0 +1,333 @@
+@import "./_default";
+@import "./_minix";
+// list.vue
+$tabH:32px; 
+.content {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.asset-template {
+    position: relative;
+    margin-top: 20px;
+}
+
+.coin-list {
+    // height: 90px;
+    padding: 30px 0 15px;
+    background: rgba(246, 247, 252, 1);
+    .content {
+        align-items: center;
+    }
+
+    // 币种资产切换
+    .asset-tab-wrap {
+        height: $tabH;
+        margin-left: 30px;
+        position: relative;
+        font-size: 0;
+        &::after {
+            content: '';
+            @include position(absolute,
+            5px,
+            $b: 5px, $l:-20px);
+            width: 1px;
+            background: #D6D9DE;
+        }
+        .tab-item {
+            display: inline-block;
+            // width: 60px;
+            padding:  0 20px;
+            height: 100%;
+            border: 1px solid #AEB0B4;
+            line-height: $tabH - 2px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+            transition: all .3s;
+            &:first-of-type {
+                border-radius: 4px 0 0 4px;
+            }
+            &:last-of-type {
+                border-left: 0px;
+                border-radius: 0 4px 4px 0;
+            }
+            &:hover {
+                color: #fff;
+                background-color: $defaultColor;
+            }
+            &.active {
+                color: #fff;
+                background-color: $defaultColor;
+            }
+        }
+    }
+    .ovh {
+        overflow: hidden;
+        button {
+            padding: 0 20px;
+            height: $tabH;
+            line-height: $tabH - 2px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            border: 1px solid #AEB0B4;
+            border-radius: 20px;
+            margin-right: 5px;
+            cursor: pointer; // line-height: 90px;
+            transition: all ease 0.5s;
+            color: #040D2C;
+            outline: none;
+            &:disabled{
+                background-color: #dadada;
+                border-color: #dadada;
+                color: #AEB0B4;
+                cursor: no-drop;
+                &:hover {
+                    color: #AEB0B4;
+                    border-color: #dadada;
+                }
+            }
+            &:hover {
+                color: $defaultColor;
+                border-color: $defaultColor;
+            }
+            &.active {
+                color: $defaultColor;
+                border-color: $defaultColor;
+            }
+        }
+    }
+
+
+    // 资产记录部分
+    .asset-record {
+        clear: both;
+        font-size: 14px;
+        .flex {
+            display: inline-block;
+            float: left;
+        } // height: 90px;
+        .asset-icon {
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+            vertical-align: sub;
+            background: url('~@/assets/img/asset-icon.png') no-repeat;
+            margin-right: 5px;
+        }
+        .record-icon {
+            @extend .asset-icon;
+            background: url('~@/assets/img/search-icon.png') no-repeat;
+        }
+        h3 {
+            font-size: 22px;
+            display: inline-block;
+            color: #040D2C;
+        }
+        .search-button {
+            padding: 0 25px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #AEB0B4;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+        }
+    }
+    .input-suffix {
+        @include display(flex,
+        center,
+        $align: center);
+        color: #040D2C;
+        float: right;
+        .el-select {
+            margin-right: 10px;
+        }
+    }
+}
+
+.coin-asset-cont {
+    // height: 170px;
+    align-items: center;
+    justify-content: center;
+    .coin-asset-item {
+        @include display(flex,
+        center,
+        column,
+        center);
+        display: inline-block\0\9;
+        vertical-align: top;
+        width: 24.7%\0\9;
+        padding: 30px 0;
+        text-align: center;
+        position: relative;
+        .icon {
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            border: 2px solid;
+            margin: 0 auto;
+            &.icon-yellow {
+                border-color: #EBC779;
+            }
+            &.icon-green {
+                border-color: #21BEB3;
+            }
+            &.icon-red {
+                border-color: #ED457A;
+            }
+            &.icon-blue {
+                border-color: #019DFA;
+            }
+        }
+        p {
+            padding: 5px 0;
+            font-size: 14px;
+            color: #040D2C;
+        }
+        h2 {
+            color: #040D2C;
+            font-size: 24px;
+            min-height: 34px;
+        }
+        &::after{
+            content: "";
+            width: 1px;
+            height: 50px;
+            background-color: #D6D9DE;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        &:last-of-type{
+            &::after{
+                content: "";
+                width: 0;
+            }
+        }
+    }
+}
+
+.content-data {
+    margin-bottom: 50px;
+}
+
+// recharge.vue
+.recharge-text-wrap {
+    border: 1px dashed #019DFA;
+    padding: 15px 20px;
+    background: $color_type7;
+    text-align: center;
+    margin-top: 25px;
+    h3 {
+        @include font(14px,
+        #F5322D,
+        $lineH: 25px);
+    }
+    p {
+        @include font(14px,
+        #999999,
+        $lineH: 25px);
+        span {
+            color: $defaultColor;
+        }
+    }
+}
+
+.user-recharge-success {
+    text-align: center;
+    .recharge-address {
+        height: 50px;
+        width: 85%;
+        background: $color_type7;
+        line-height: 50px;
+        margin: 15px auto 0;
+        span.left {
+            color: #040D2C;
+        }
+        span.right {
+            color: #999999;
+        }
+    }
+    .recharge-list {
+        justify-content: space-between;
+        margin-top: 20px;
+        .recharge-item {
+            text-align: center;
+            box-shadow: 0 0 10px rgba(40, 43, 49, 0.06);
+            height: 100px;
+            flex: 1;
+            font-size: 14px;
+            line-height: 25px;
+            @include display(flex,
+            center,
+            column,
+            center);
+            &:not(:last-of-type) {
+                margin-right: 20px;
+            }
+            p {
+                color: $defaultColor;
+            }
+        }
+    }
+    .recharge-time {
+        width: 60%;
+        margin: 150px auto 0;
+        .time {
+            font-size: 14px;
+            color: #333333;
+            line-height: 60px;
+            border-bottom: 1px solid $color_type7;
+        }
+        .tell {
+            color: #999999;
+            line-height: 80px;
+        }
+    }
+}
+
+.asset-form-text {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 10px;
+    position: relative;
+    background: #EBF2FF;
+    .pos {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        color: $defaultColor;
+    }
+}
+
+.recharge-title-text {
+    color: rgba(4, 13, 44, 1);
+    line-height: 30px;
+    font-size: 20px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.qrcode {
+    text-align: center;
+    height: 150px;
+    canvas {
+        height: 150px !important;
+        width: 150px !important;
+    }
+}
+
+.user-form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}

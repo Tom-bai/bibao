@@ -1,0 +1,40 @@
+@import "./_default";
+@import "./_minix";
+.datalist {
+    position: relative;
+    width: 1400px;
+    margin: 25px auto;
+    .datalist-search {
+        width: 100%;
+        margin-bottom: 15px;
+        clear: both;
+        .trade-list {
+            @include size(40px);
+            line-height: 40px;
+            box-sizing: border-box;
+            display: inline-block;
+            float: left;
+            .trade-item {
+                font-size: 14px;
+                padding: 0px 20px;
+                cursor: pointer;
+                margin-right: 10px;
+                transition: background ease-in 0.5s;
+                display: inline-block;
+                &.active {
+                    background: $defaultColor;
+                    color: $white;
+                    border-radius: 4px;
+                }
+                &:hover {
+                    @extend .active;
+                }
+            }
+        }
+        .search-input{
+            float: right;
+            max-width: 250px;
+            display: inline-block;
+        }
+    }
+}

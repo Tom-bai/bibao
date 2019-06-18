@@ -1,0 +1,96 @@
+@import "./_default";
+@import "./_minix";
+.c2b-template {
+    width: 1200px;
+    margin: 0 auto 50px;
+    .c2b-tip {
+        line-height: 35px;
+        margin: 50px 0;
+        font-size: 16px;
+        .icon {
+            height: 35px;
+            width: 35px;
+            vertical-align: middle;
+            display: inline-block;
+            background: url('~@/assets/img/warn-icon.png') no-repeat center center;
+        }
+        a {
+            color: $defaultColor;
+        }
+    }
+}
+
+.tab-list {
+    @include display(flex);
+    flex-wrap: wrap;
+    .tab-item {
+        display: inline-block;
+        padding: 15px 30px;
+        cursor: pointer;
+        box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        background: $color_type7;
+        color: #999999;
+        margin-right: 20px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        &.active {
+            color: #005EFF;
+            background: $white;
+        }
+    }
+}
+
+.recharge-title {
+    @include font(18px,
+    rgba(4, 13, 44, 1));
+}
+
+.recharge-text-wrap {
+    border: 1px dashed #019DFA;
+    padding: 15px 20px;
+    background: $color_type7;
+    text-align: center;
+    margin-top: 10px;
+    h3 {
+        @include font(14px,
+        #F5322D,
+        $lineH: 25px);
+    }
+    p {
+        @include font(14px,
+        #999999,
+        $lineH: 25px);
+    }
+}
+
+.user-form-title {
+    text-align: center;
+    font-size: 22px;
+    margin: 20px auto;
+}
+
+.success-mask {
+    position: relative;
+    text-align: center;
+    .icon-success {
+        margin: 0 auto;
+        display: inline-block;
+        background: url('~@/assets/img/success-icon.png') no-repeat center center;
+        @include size(35px,
+        35px);
+    }
+    .success-title {
+        @include font(22px,
+        #001939,
+        $lineH: 30px);
+        padding: 5px 0;
+    }
+    .grid-content {
+        @include font(14px,
+        #040D2C);
+        line-height: 40px;
+        background: $color_type7;
+        margin-top: 15px;
+    }
+}

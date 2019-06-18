@@ -1,0 +1,77 @@
+@import "./_default";
+@import "./_minix";
+@import "./_public";
+// list.vue
+.order-list {
+    position: relative;
+    margin-bottom: 100px;
+    .user-form-wrap {
+        // margin-top: 30px;
+        margin: 0 auto;
+        .user-form-title {
+            padding: 10px 0;
+            @include font(22px, #001939, $align: center);
+        }
+    }
+}
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.user-cont {
+    position: relative;
+    margin: 20px 0;
+}
+
+// list-detail.vue
+.order-detail-cont {
+    position: relative;
+    .order-detail {
+        margin: 50px 0;
+        border: 15px solid #F6F7FC;
+        padding: 15px;
+        .order-conts {
+            position: relative;
+            .order-state {
+                text-align: center;
+                i.icon {
+                    display: block;
+                    @include size(35px, 35px);
+                    margin: 0 auto;
+                    &.icon-success {
+                        background: url('~@/assets/img/success-icon.png') no-repeat center center;
+                    }
+                    &.icon-error {
+                        background: url('~@/assets/img/warn-icon.png') no-repeat center center;
+                    }
+                    &.icon-info {
+                        background: url('~@/assets/img/info-icon.png') no-repeat center center;
+                    }
+                }
+                h3 {
+                    @include font(22px,
+                    #040D2C,
+                    $lineH: 35px);
+                }
+            }
+        }
+        .order-info {
+            margin-top: 50px;
+            position: relative;
+            .order-item {
+                @include font(16px,
+                #040D2C);
+                margin-bottom: 10px;
+                &:not(:nth-of-type(2n)) {
+                    padding-right: 10px;
+                }
+                .grid-content {
+                    background: #F6F7FC;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}

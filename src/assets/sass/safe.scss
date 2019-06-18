@@ -1,0 +1,485 @@
+@import "./_default";
+@import "./_minix";
+.email-template,
+.bank-template {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+// safe/list.vue
+.safe-list-wrap {
+    position: relative;
+    width: 1200px;
+    margin: 80px auto;
+    .safe-list {
+        @include display(flex);
+        flex-wrap: wrap;
+        .safe-item {
+            width: 33.33%;
+            border-bottom: 0.5px solid $color_type5;
+            padding: 30px; // height: 180px;
+            // min-height: 180px;
+            @include display(flex, center, column);
+            display: inline-block\0\9;
+            &:not(:nth-of-type(3n)) {
+                border-right: 0.5px solid $color_type5;
+            }
+            .safe-info {
+                align-items: center; // .safe-icon {
+                //     margin-right: 20px;
+                //     display: inline-block;
+                // }
+                // &>.flex{
+                //     width: calc(100%-80px);
+                //     display: inline-block;
+                // }
+                h3 {
+                    @include font(16px, #040D2C);
+                    padding: 10px 0;
+                }
+                p {
+                    @include font(14px, #999999, $lineH: 25px);
+                    min-height: 50px;
+                }
+            }
+            .safe-text {
+                cursor: pointer;
+                @include font(14px, $align: right);
+            }
+        }
+    }
+}
+
+.user-form-wrap {
+    width: 500px;
+    margin: 0 auto;
+    .flex-btn {
+        width: 100%;
+        background: $defaultColor;
+        border: 1px solid $defaultColor;
+        box-shadow: 7px 0px 20px rgba(255, 114, 114, 0.54);
+    }
+    .next-setp {
+        width: 100%;
+        background: #ffdada;
+        color: $defaultColor;
+        border-color: #ffdada;
+        &:hover {
+            background-color: #DE211D;
+            color: #FFF;
+        }
+    }
+    .form-text {
+        color: $white;
+        font-size: 12px;
+        span {
+            cursor: pointer;
+        }
+        &.center {
+            justify-content: center;
+        }
+    }
+    .form-tab {
+        padding: 10px 0;
+        margin-bottom: 10px;
+        @include display(flex, center);
+        .tab-item {
+            padding: 5px 25px;
+            border: 1px solid $white;
+            border-radius: 20px;
+            transition: all ease 0.5s;
+            @include font(14px, $white);
+            &:not(:last-of-type) {
+                margin-right: 20px;
+            }
+            &.active {
+                background: $defaultColor;
+                border-color: $defaultColor;
+            }
+        }
+    }
+}
+
+.user-form-title {
+    padding: 15px 0;
+    font-size: 22px;
+    text-align: center;
+    color: #002059;
+    margin-bottom: 10px;
+}
+
+// bank.vue
+.bank-list-wrap {
+    width: 1000px;
+}
+
+.bank-list {
+    position: relative;
+    flex-wrap: wrap;
+    .bank-item {
+        position: relative; // cursor: pointer;
+        padding: 20px;
+        margin-bottom: 10px;
+        background: url('~@/assets/img/bank_bg.png') no-repeat;
+        background-size: 100%;
+        @include font(12px,
+        #040D2C);
+        @include size(143px,
+        246px);
+        @include display(flex,
+        center,
+        column,
+        flex-start);
+        h3 {
+            padding: 5px 0;
+            margin-top: 20px;
+        }
+        .add-bank {
+            padding: 10px 20px;
+            border: 1px dashed #002059;
+            border-radius: 4px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.3;
+            &:hover {
+                border-color: $defaultColor;
+                color: $defaultColor;
+            }
+        }
+        label {
+            display: inline-block;
+            margin-top: 17px;
+            cursor: pointer;
+            .dots {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                border: 1px solid $defaultColor;
+                border-radius: 50%;
+                line-height: 14px;
+                text-align: center;
+                font-size: 14px;
+                color: transparent;
+                transition: all .5s;
+                vertical-align: middle;
+                &.active {
+                    // font-size: 14px;
+                    color: $defaultColor;
+                }
+                &+span {
+                    display: inline-block;
+                    width: 100px;
+                    height: 1em;
+                    line-height: 1em;
+                    overflow: hidden;
+                    position: relative;
+                    vertical-align: middle;
+                    s {
+                        position: absolute;
+                        top: -1em;
+                        left: 0;
+                        text-decoration: none;
+                        transition: all .3s;
+                    }
+                    &.active {
+                        s {
+                            top: 0em;
+                        }
+                    }
+                }
+            }
+        }
+        .delbtn {
+            position: absolute;
+            right: 13px;
+            top: 13px;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 5px;
+            cursor: pointer;
+            &:hover {
+                border-color: $defaultColor;
+                color: $defaultColor;
+            }
+        }
+    }
+}
+
+.success-step {
+    margin-top: 100px;
+    text-align: center;
+    .success-text {
+        padding: 10px 0;
+        color: #002059;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .success-icon {
+            height: 25px;
+            width: 25px;
+            background: url('~@/assets/img/success-icon.png') no-repeat center center;
+            background-size: 100% 100%;
+            margin-right: 10px;
+        }
+    }
+    .success-btns {
+        padding: 0;
+        .el-button {
+            height: 44px;
+            line-height: 44px;
+            padding: 0 150px;
+            background: $defaultColor;
+            color: $white;
+        }
+    }
+}
+
+.user-form-sub-title {
+    color: $defaultColor;
+    text-align: center;
+}
+
+// identity.vue
+.identity-wrap {
+    width: 600px;
+}
+
+.identity {
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0;
+    border-radius: 4px;
+    overflow: hidden;
+    &-item {
+        color: #002059;
+        background: rgba(246, 247, 252, 1);
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        &.active {
+            background: $defaultColor;
+            color: $white;
+        }
+    }
+}
+
+.identity-text {
+    @include font(14px,
+    rgba(4,
+    13,
+    44,
+    1));
+    line-height: 25px;
+    span {
+        color: $defaultColor;
+    }
+}
+
+// .upload-flex {
+//     display: inline-block;
+// }
+
+// .upload-flex:not(:nth-of-type(3)) {
+//     // padding-right: 10px;
+//     width: 195px;
+//     box-sizing: border-box;
+// }
+.upload-box {
+    font-size: 0;
+    text-align: center;
+}
+.upload-item {
+    display: inline-block;
+    width: calc((100% - 24px) / 3);
+    margin-right: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+.form-input-file img {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.form-input-file input {
+    cursor: pointer;
+}
+
+.wechat_code_upload {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    .wechat_code-text {
+        @include position(absolute,
+        0,
+        0,
+        0,
+        0);
+        @include size(100%,
+        100%);
+        text-align: center;
+        color: #999999;
+        font-size: 14px;
+        span:nth-of-type(1) {
+            @include font(50px,
+            $defaultColor);
+            margin-top: 30px;
+            display: block;
+        }
+    }
+}
+
+.form-file {
+    position: relative; // padding: 0 10px;
+    .form-input-file {
+        margin: 0 auto;
+        @include size(100px,
+        100%);
+        &.wechat_code_img_bg {
+            @include size(170px,
+            200px);
+            border: 1px dashed #E7E8EA;
+            border-radius: 4px;
+            &:hover {
+                border-color: $defaultColor;
+            }
+        }
+        position: relative;
+        .form-input-file-img {
+            height: 100%;
+            width: 100%;
+        }
+        input {
+            @include position(absolute,
+            0,
+            0,
+            0,
+            0);
+            width: 100%;
+            opacity: 0;
+            z-index: 9;
+        }
+    }
+    .form-input-file.appeal-pic {
+        height: 150px;
+        width: 150px;
+        border: 1px dashed #ccc;
+        border-radius: 4px;
+        position: relative;
+        &::after {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 30px;
+            height: 3px;
+            background: $defaultColor;
+            content: '';
+            display: block;
+            transform: translate(-50%,-50%);
+            z-index: 0;
+        }
+        &::before {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 3px;
+            height: 30px;
+            background: $defaultColor;
+            content: '';
+            display: block;
+            transform: translate(-50%,-50%);
+            z-index: 0;
+        }
+        &:hover{
+            border-color: $defaultColor;
+        }
+        img{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 1;
+            width: 192px;
+            height: 100px;
+        }
+    }
+    .form-input-text {
+        cursor: pointer;
+        font-size: 12px;
+        color: rgba(155, 155, 155, 1);
+        text-align: center;
+        border: 1px solid rgba(228, 228, 228, 1);
+        margin-top: 10px;
+    }
+    .imgHandSrc {
+        background: url("~@/assets/img/imgHandSrc.png") center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .imgFaceSrc {
+        background: url("~@/assets/img/imgFaceSrc.png") center center no-repeat;
+        background-size: 100% 100%;
+    }
+    .imgBackSrc {
+        background: url("~@/assets/img/imgBackSrc.png") center center no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.success-identity {
+    margin-top: 100px;
+    text-align: center;
+    .success-identity-pic {
+        margin: 0 auto;
+    }
+    p {
+        @include font(16px,
+        rgba(0,
+        32,
+        89,
+        1));
+        line-height: 30px;
+    }
+    .flex-btn {
+        margin-top: 40px;
+    }
+}
+
+.question-wrap {
+    width: 600px;
+    margin: 50px auto 0;
+    .flex-btn {
+        background: $defaultColor;
+        color: $white;
+    }
+    .question-message {
+        &-three {
+            padding: 20px 50px;
+            line-height: 25px;
+        }
+        .icon {
+            @include size(25px,
+            25px);
+            display: inline-block;
+            vertical-align: middle;
+            background: url('~@/assets/img/error-info-icon.png') no-repeat center center;
+        }
+        margin: 10px 0;
+        padding: 10px 15px;
+        background: #E5FFED;
+        color: #333333;
+        font-size: 14px;
+        border: 1px solid $color_type4;
+        border-radius: 4px;
+        line-height: 25px;
+        text-align: left;
+        .c-green {
+            color: #00BB39;
+        }
+    }
+}

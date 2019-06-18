@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+<<<<<<< HEAD
+	<name>mce</name>
+=======
+	<name>mce-pc</name>
+>>>>>>> 44258e18c073226146e94d6af4b7ec0714726c17
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.aptana.ide.core.unifiedBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.aptana.projects.webnature</nature>
+	</natures>
+	<filteredResources>
+		<filter>
+<<<<<<< HEAD
+<<<<<<< HEAD
+			<id>1532921304640</id>
+=======
+			<id>1533692252254</id>
+>>>>>>> 44258e18c073226146e94d6af4b7ec0714726c17
+=======
+			<id>1533692252254</id>
+=======
+			<id>1533714217857</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1533780477584</id>
+>>>>>>> zxhuan
+>>>>>>> c9941d0eea9356d5440bef5a44c9e5b3b4eb7ff4
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
+</projectDescription>

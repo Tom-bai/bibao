@@ -1,0 +1,37 @@
+@import "./_default";
+@import "./_minix";
+.statistics-cont {
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 1000px;
+    padding: 80px 0 50px;
+    .statistics-title {
+        display: inline-block;
+        .statistics-icon {
+            display: inline-block;
+        }
+        h3 {
+            display: inline-block;
+            vertical-align: super;
+            margin-left: 5px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    .map-box {
+        width: 100%;
+        &-left {
+            width: 500px;
+            height: 347px;
+            float: left;
+            img{
+                width: 100%
+            }
+        }
+        &-right {
+            width: 640px;
+            // height: 347px;
+            float: right;
+        }
+    }
+}

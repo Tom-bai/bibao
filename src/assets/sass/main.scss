@@ -1,0 +1,40 @@
+@import "./_default";
+@import "./_minix";
+.main {
+    position: relative;
+    min-width:$homeW;
+    .main-desc {
+        width: 1400px;
+        position: relative;
+        margin: 50px auto;
+        .main-item {
+            position: relative;
+            padding: 40px 50px;
+            cursor: pointer;            
+            @include display(flex, space-between, column, center);
+            display: inline-block;
+            // width: 309px;
+            @include size(395px,333px);
+            &:not(:last-of-type) {
+                margin-right: 18px;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+            img {
+                width: 100%;
+                max-width: 208px;
+                transition: all ease-in-out 0.5s;
+            }
+            h3 {
+                @include font(16px, #000, center);
+                padding: 10px 0;
+            }
+            p {
+                @include font(14px, #666666, center);
+            }
+        }
+    }
+}

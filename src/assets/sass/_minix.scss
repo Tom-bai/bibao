@@ -1,0 +1,172 @@
+ @mixin position($pos, $t:inherit, $r:inherit, $b:inherit, $l:inherit) {
+     position: $pos;
+     @if $l !=inherit {
+         left: $l;
+     }
+     @if $r !=inherit {
+         right: $r;
+     }
+     @if $b !=inherit {
+         bottom: $b;
+     }
+     @if $t !=inherit {
+         top: $t;
+     }
+ }
+
+ @mixin backgroundImg($url, $repeat:inherit, $postion:center center, $color:white) {
+     background: $color url('../../assets/img/'+$url) $repeat $postion;
+ }
+
+ @mixin bgColor($color) {
+     background: $color;
+ }
+
+ @mixin boxShadow($value) {
+     -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+     -ms-box-shadow: $value;
+     box-shadow: $value;
+ }
+
+ @mixin translate($x,
+ $y) {
+     -webkit-transform: translate($x, $y);
+     -ms-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+     transform: translate($x, $y);
+ }
+
+ @mixin display($value,
+ $justify:inherit,
+ $direction:inherit,
+ $align:inherit) {
+     display: -webkit-$value;
+     display: -moz-$value;
+     display: -ms-$value;
+     display: $value;
+     @if $justify !=inherit {
+         justify-content: $justify;
+     }
+     @if $direction !=inherit {
+         flex-direction: $direction;
+     }
+     @if $align !=inherit {
+         align-items: $align;
+     }
+ }
+
+ @mixin border_b($value) {
+     border-bottom: $value;
+ }
+
+ @mixin border($value) {
+     border: $value;
+ }
+
+ @mixin boxSizing($value) {
+     -moz-box-sizing: border-box;
+     -ms-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+
+ @mixin transition($value) {
+     -webkit-transition: $value;
+     -ms-transition: $value;
+     -moz-transition: $value;
+     transition: $value;
+ }
+
+ @mixin flex($value) {
+     -webkit-flex: $value;
+     -moz-flex: $value;
+     -ms-flex: $value;
+     flex: $value;
+ }
+
+ @mixin rotate($value) {
+     -webkit-transform: rotate($value);
+     -ms-transform: rotate($value);
+     -moz-transform: rotate($value);
+     transform: rotate($value);
+ }
+
+ @mixin scacleY($value) {
+     -webkit-transform: scacleY($value);
+     -ms-transform: scacleY($value);
+     -moz-transform: scacleY($value);
+     transform: scacleY($value);
+ }
+
+ @mixin textCenter {
+     text-align: center;
+ }
+
+ @mixin borderRadius($value) {
+     border-radius: $value;
+ }
+
+ @mixin opacity($opacity:50) {
+     opacity: $opacity / 100;
+     filter: alpha(opacity=$opacity);
+ } //  多行文本截取，以省略号表示
+ @mixin textBreak($value) {
+     display: -webkit-box;
+     display: box;
+     box-orient: vertical;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: $value;
+     overflow: hidden;
+     text-overflow: ellipsis;
+ } // 宽高设置
+ @mixin size($h:auto,
+ $w:auto,
+ $maxH:auto,
+ $maxW:auto,
+ $minH:auto,
+ $minW:auto,
+ $lineH:auto) {
+     @if $w !=auto {
+         width: $w;
+     }
+     @if $h !=auto {
+         height: $h;
+     }
+     @if $maxH !=auto {
+         max-height: $maxH;
+     }
+     @if $maxW !=auto {
+         max-width: $maxW;
+     }
+     @if $minH !=auto {
+         min-height: $minH;
+     }
+     @if $minW !=auto {
+         min-width: $minW;
+     }
+     @if $lineH !=auto {
+         line-height: $lineH;
+     }
+ }
+
+ @mixin font($size:inherit,
+ $color:inherit,
+ $align:auto,
+ $lineH:auto,
+ $fontW:inherit) {
+     @if $size !=inherit {
+         font-size: $size;
+     }
+     @if $color !=inherit {
+         color: $color;
+     }
+     @if $align !=auto {
+         text-align: $align;
+     }
+     @if $lineH !=auto {
+         line-height: $lineH;
+     }
+     @if $fontW !=inherit {
+         font-weight: $fontW;
+     }
+ }

@@ -1,0 +1,192 @@
+@import "./_default";
+@import "./_minix";
+// 选项卡
+.user {
+    position: relative;
+    &-cont {
+        position: relative;
+        .tab-list {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 30px;
+            height: 45px;
+            line-height: 45px;
+            @include display(flex);
+            .tab-item {
+                padding: 0 35px;
+                color: #002059;
+                background: $color_type7;
+                cursor: pointer;
+                transition: all ease 0.5s;
+                display: inline-block\0\9;
+                &:nth-of-type(1) {
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                }
+                &:nth-of-type(2) {
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+                &.active {
+                    background: $defaultColor;
+                    color: $white;
+                }
+                &:hover {
+                    @extend .active;
+                }
+            }
+        }
+    }
+}
+// c2c订单筛选公用
+.coin-list {
+    // height: 90px;
+    padding: 30px 0;
+    background: rgba(246, 247, 252, 1);
+    .flex-coin {
+        display: inline-block\0\9;
+        vertical-align: bottom\0\9;
+    }
+    .content {
+        align-items: center;
+    }
+    .coin-item {
+        padding: 5px 20px;
+        border: 1px solid #AEB0B4;
+        border-radius: 20px;
+        margin-right: 5px;
+        cursor: pointer; // line-height: 90px;
+        transition: all ease 0.5s;
+        color: #040D2C;
+        &:hover {
+            color: $defaultColor;
+            border-color: $defaultColor;
+        }
+        &.active {
+            color: $defaultColor;
+            border-color: $defaultColor;
+        }
+    }
+    .asset-record {
+        clear: both;
+        font-size: 14px;
+        
+        .flex {
+            display: inline-block;
+            float: left;
+            line-height: 30px;
+            i {
+                line-height: 30px;
+                vertical-align: middle;
+            }
+            h3 {
+                line-height: 30px;
+                vertical-align: middle;
+            }
+        } // height: 90px;
+        .asset-icon {
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+            vertical-align: sub;
+            background: url('~@/assets/img/asset-icon.png') no-repeat;
+            margin-right: 5px;
+        }
+        .record-icon {
+            @extend .asset-icon;
+            background: url('~@/assets/img/search-icon.png') no-repeat;
+        }
+        h3 {
+            font-size: 22px;
+            display: inline-block;
+            color: #040D2C;
+        }
+        .search-button {
+            padding: 0 25px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #AEB0B4;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+        }
+    }
+    .input-suffix {
+        @include display(flex,
+        center,
+        $align: center);
+        color: #040D2C;
+        float: right;
+        .el-select {
+            margin-right: 10px;
+        }
+    }
+    .asset-tab-wrap {
+        height: 100%;
+        position: relative;
+        float: right;
+        font-size: 0;
+        &::after {
+            content: '';
+            @include position(absolute,
+            5px,
+            $b: 5px, $l:-20px);
+            width: 1px;
+            background: #D6D9DE;
+        }
+    }
+    .tab-item {
+        display: inline-block;
+        width: 60px;
+        height: 100%;
+        border: 1px solid #AEB0B4;
+        line-height: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        transition: all .3s;
+        &:first-of-type {
+            border-radius: 4px 0 0 4px;
+        }
+        &:last-of-type {
+            border-left: 0px;
+            border-radius: 0 4px 4px 0;
+        }
+        &:hover {
+            color: #fff;
+            background-color: $defaultColor;
+        }
+        &.active {
+            color: #fff;
+            background-color: $defaultColor;
+        }
+    } // }
+}
+
+.up {
+    color: red;
+    &::after {
+        // content: "\E631";
+        content: "↑";
+        padding-left: 5px;
+        font-family: element-icons!important;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        line-height: 1;
+    }
+}
+.down {
+    color: #00b600;
+    &::after {
+        // content: "\E630";
+        content: "↓";
+        padding-left: 5px;
+        font-family: element-icons!important;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        line-height: 1;
+    }
+}

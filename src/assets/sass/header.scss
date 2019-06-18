@@ -1,0 +1,235 @@
+@import "./_default";
+@import "./_minix";
+.public-header {
+    min-width: $wrapW;
+    &.fix-nav {
+        @include position(absolute, 0, 0, $l: 0);
+        z-index: 9;
+        .header-top {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .header-nav {
+            margin-top: 35px;
+            height: 40px;
+            line-height: 40px;
+            .nav {
+                &-list {
+                    .nav-item {
+                        display: inline-block;
+                        position: relative;
+                        &.subnav-toggle::after {
+                            border-color: white;
+                        }
+                        a {
+                            @include font(14px, $white);
+                        }
+                        .sub-nav {
+                            position: absolute;
+                            left: -100px;
+                            right: -100px;
+                            padding-top: 18px;
+                            width: 167px;
+                            margin: auto;
+                            &-item {
+                                line-height: 1;
+                                padding: 8px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.un-fix {
+        .header-top {
+            // background: $defaultColor;
+            background: #171629;
+        }
+        .header-nav {
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05); // height: 72px;
+            // line-height: 72px;\
+            padding: 25px 0;
+            .nav {
+                &-list {
+                    .nav-item {
+                        display: inline-block;
+                        &.active a {
+                            color: $defaultColor;
+                        }
+                        a {
+                            @include font(14px, #002059);
+                        }
+                    }
+                    .nav-item:hover {
+                        >a {
+                            color: $defaultColor;
+                        }
+                        &.subnav-toggle::after {
+                            border-color: $defaultColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-top {
+        @include size(45px, 100%);
+        @include font(14px, $white, center, 45px);
+        .msg-text {
+            margin-right: 10px;
+        }
+        .more-btn {
+            @include font(14px, $white, center, 45px);
+        }
+    }
+    .nav-warp {
+        padding: 0 38px;
+        line-height: 35px;
+    }
+    .header-nav {
+        &.fullPages {
+            background: $color_type9;
+        }
+        .fullPage {
+            background: $color_type9;
+            height: 100%;
+            width: 100%;
+            padding: 0 38px;
+            .nav-list .nav-item a {
+                color: $white;
+            }
+            .sign a {
+                color: $white;
+                &.sign-in {
+                    border-color: $white;
+                }
+            }
+        }
+        &.fixed {
+            min-width: $wrapW;
+            margin: 0; // padding: 15px 38px;
+            // box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.5);
+            @include position(fixed, 0, 0, 0, 0);
+        }
+        .nav-logo {
+            position: relative;
+            float: left;
+            overflow: auto;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            img {
+                height: auto;
+                width: auto;
+            }
+        }
+        .nav {
+            margin-left: 30px;
+            float: left;
+            position: relative;
+            &-list {
+                display: flex;
+                .nav-item {
+                    display: inline-block;
+                    padding: 0 20px;
+                    position: relative;
+                    &.subnav-toggle::after {
+                        height: 8px;
+                        width: 8px;
+                        border-top: 1px solid #002059;
+                        border-right: 1px solid #002059;
+                        position: absolute;
+                        right: 6px;
+                        top: 12px;
+                        content: '';
+                        display: block;
+                        transition: all ease-in-out 0.5s;
+                        transform: rotate(135deg);
+                    }
+                    &.subnav-toggle:hover:after {
+                        top: 15px;
+                        transform: rotate(-45deg);
+                    }
+                    .sub-nav {
+                        display: none;
+                        position: absolute;
+                        left: -100px;
+                        right: -100px;
+                        padding-top: 18px;
+                        width: 167px;
+                        margin: auto;
+                        z-index: 999;
+                        text-align: center;
+                        &-item {
+                            line-height: 1;
+                            padding: 8px 10px;
+                        }
+                        .sub-nav-ul {
+                            background: $white;
+                            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+                            span {
+                                font-size: 14px;
+                                color: #002059;
+                                cursor: pointer;
+                            }
+                            span:hover {
+                                color: $defaultColor;
+                            }
+                        }
+                    }
+                }
+                .nav-item:hover {
+                    .sub-nav {
+                        display: block;
+                    }
+                }
+            }
+            .nav-active {
+                @include position(absolute, $b: -5px);
+                height: 2px;
+                background: $white;
+                transition: all ease-in-out 0.3s;
+            }
+        }
+    }
+    .sign {
+        float: right;
+        .sign-in {
+            padding: 3px 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        &.sign-unfix {
+            a {
+                @include font(14px, #002059)
+            }
+            .sign-in {
+                border: 1px solid #002059;
+            }
+        }
+        &.sign-fix {
+            a {
+                @include font(14px, $white)
+            }
+            .sign-in {
+                border: 1px solid #fff;
+            }
+        }
+    } // 语言选择
+    .lang {
+        // height: 35px;
+        padding-left: 20px;
+        font-size: 0;
+        img {
+            height: 20px;
+            vertical-align: middle;
+        }
+        .lang_def {
+            line-height: 35px;
+        } // .lang_list {
+        //     .lang_item {
+        //     }
+        // }
+    }
+}

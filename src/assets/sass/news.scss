@@ -1,0 +1,104 @@
+@import "./_default";
+@import "./_minix";
+// news/list.vue
+.new-list {
+    width: 1200px;
+    margin: 40px auto 50px;
+    .box-flex {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .news-item {
+        width: 48%;
+        box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.05);
+        height: 80px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        padding: 10px 20px;
+        @include display(flex, space-between, $align: center);
+        display: inline-block\0\9;
+        .news-title {
+            @include font(18px, $defaultColor);
+            a {
+                @include font(18px, $defaultColor);
+            }
+        }
+        .news-desc {
+            @include font(14px, #061027);
+        }
+    }
+}
+
+// notice.vue
+.notice-list {
+    width: 1200px;
+    margin: 40px auto 50px;
+    .notice-item {
+        height: 140px;
+        border-radius: 4px;
+        padding: 10px 20px;
+        margin-bottom: 25px;
+        box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.05);
+        // @include display(flex, center, $direction: column);
+        cursor: pointer;
+        .notice-title {
+            display: inline-block;
+            padding: 20px 0 10px;
+            @include font(18px, $defaultColor);
+        }
+        .notice-desc {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            height: 50px;
+            text-align: justify;
+            line-height: 25px;
+            @include font(14px, #061027);
+        }
+        .notice-time {
+            text-align: right;
+            padding: 20px 0 10px;
+            @include font(14px, #061027);
+        }
+    }
+}
+
+// detail.vue
+.article-detail {
+    width: 1200px;
+    margin: 50px auto;
+    .article-title {
+        @include font(28px, $defaultColor);
+    }
+    .article-time {
+        line-height: 50px;
+        height: 50px;
+        border-bottom: 1px solid rgba(157, 162, 169, 0.3);
+        font-size: 12px;
+        color: $color_type6;
+    }
+    article {
+        padding: 50px 0;
+        text-indent: 2em;
+        @include font(14px, #061027, $lineH: 25px);
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .article-sub-button-title {
+        @include font(14px, #061027, right, $lineH: 25px);
+        a {
+            margin-left: 10px;
+            @include font(14px, #061027);
+            transition: color .3s;
+            &:hover {
+                color: $defaultColor;
+            }
+        }
+    }
+}
+
+.pagination {
+    margin-top: 20px;
+}
